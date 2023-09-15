@@ -1,1 +1,35 @@
-d
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: hostsubnets.egressha.com
+spec:
+  conversion:
+    strategy: None
+  group: egressha.com
+  name:
+    kind: Hostsubnet
+    listKind: HostsubnetList
+    plural: hostsubnets
+    shorNames:
+    - hs
+    singular: hostsubnet
+    scope: Cluster
+    versions:
+    - additionalPrinterColumns:
+      - jsonPath: .spec.host_name
+        name: Host
+        type: string
+      - jsonPath: .spec.host_ip
+        name: Host IP
+        type: string
+      - jsonPath: .spec.egress_cidrs
+        name: Egress CIDRS
+        type: string
+      - jsonPath: .spec.egress_ips
+        name: Egress IP
+        type: string
+      - jsonPath: .spec.status
+        name: Status
+        type: string
+        
+    
