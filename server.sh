@@ -11,7 +11,7 @@ fi
 sshpass -p  $TOKEN ssh-copy-id -o StrictHostKeyChecking=no root@34.172.154.67
 
 cat <<EOT>> ~/.ssh/config
-Host ubt
+Host server
   HostName 34.172.154.67
   User root
 EOT
