@@ -15,4 +15,5 @@ git clone https://github.com/istio/istio.git  --branch 1.23.1 --single-branch
 
 echo "Download&run test script"
 wget https://raw.githubusercontent.com/kctsengh/misc/main/ambient-consistenthash.sh
+sudo chmod +x ambient-consistenthash.sh
 ./ambient-consistenthash.sh "$(pwd)/istio"
